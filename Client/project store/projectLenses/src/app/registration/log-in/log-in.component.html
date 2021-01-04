@@ -1,0 +1,146 @@
+
+<router-outlet></router-outlet>
+
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>New snippet 517</title>
+    <style>
+        body {
+            margin: 25px;
+			padding: 10px;
+			
+        }
+    </style>
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css"><style></style><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+<body aria-busy="true">
+
+
+<!-- Material form login -->
+<div class="card"  >
+
+  <h5 class="card-header info-color white-text text-center py-4">
+    <strong>הירשם</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;" action="#!" [formGroup]="formdata">
+
+      <!-- Email -->
+      <div class="md-form">
+		
+        <input #email  matInpu placeholder="אימייל"  type="email" id="materialLoginFormEmail" class="form-control" formControlName="email" required>
+		<!-- <label for="materialLoginFormEmail">E-mail</label> -->
+		
+      </div>
+
+      <!-- Password -->
+      <div class="md-form">
+        <input  #password  matInpu placeholder="סיסמא"  type="password" id="materialLoginFormPassword" class="form-control" formControlName="password" required>
+        <!-- <label for="materialLoginFormPassword">Password</label> -->
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <!-- Remember me -->
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+            <label class="form-check-label" for="materialLoginFormRemember">זכור אותי</label>
+          </div>
+        </div>
+         <div>
+          <!-- Forgot password  -->
+		  <a  (click)="signIn()" type="button" routerLink="/registration">?משתמש חדש</a>
+        </div>
+	  </div> 
+	 
+
+      <!-- Sign in button -->
+      <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click)="logIn1(email.value,password.value)">התחבר</button>
+      <!-- <div *ngFor="let i of logIn.dataLogIn">
+		  <button (click)="deletD(i.id)">מחק</button>
+	  </div> -->
+      <!-- Register -->
+      <!-- <p>Not a member?
+        <a href="">Register</a>
+      </p> -->
+
+      <!-- Social login -->
+      <!-- <p>or sign in with:</p>
+      <a type="button" class="btn-floating btn-fb btn-sm waves-effect waves-light">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a type="button" class="btn-floating btn-tw btn-sm waves-effect waves-light">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a type="button" class="btn-floating btn-li btn-sm waves-effect waves-light">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a type="button" class="btn-floating btn-git btn-sm waves-effect waves-light">
+        <i class="fab fa-github"></i>
+      </a> -->
+
+    </form>
+    <!-- Form -->
+
+  </div>
+
+</div>
+<!-- Material form login -->
+<!-- <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.1/compiled-addons.min.js"></script><script></script><div class="hiddendiv common"></div></body></html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="page-wrap" >
+	<mat-card class="container"  >
+
+		<form [formGroup]="formdata">
+
+			
+            
+			<mat-form-field    >
+				<input   #email matInput placeholder="אימייל" formControlName="email" type="email" required>
+            </mat-form-field>
+         
+				<mat-form-field>
+					<input  #password  matInput type="password" placeholder="סיסמא" formControlName="password" required>
+            </mat-form-field>
+		
+					<div class="text-center flex-center remember-me mat-typography">
+						<button  mat-raised-button color="primary" class="login" (click)="logIn1(email.value,password.value)">הכנס</button>
+						<mat-checkbox class="text-center mat-typography" formControlName="remember">Remember Me
+						</mat-checkbox>
+					</div>
+					<br/>
+					<div class="flex-center" mat-typography>
+						<a mat-button (click)="signIn()" routerLink="/registration" color="primary" href="">?משתמש חדש</a>
+					
+						<a mat-button (click)="Password" routerLink="/forgot" color="primary" href="">Forgot
+							Password</a> 
+					</div>
+					
+		</form>
+		<br/>
+
+		<div class="text-center mat-typography">
+
+		</div>
+	</mat-card>
+
+</div> -->
+
+

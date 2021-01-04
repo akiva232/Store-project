@@ -1,0 +1,939 @@
+<!-- <div id="con">
+
+
+
+    <div class="payment_box payment_method_officeguy" style="margin-left: 100px;">
+        <p>שלם בכרטיס אשראי בצורה מאובטחת</p>
+        <script>
+            var OG_Settings = {
+                CompanyID: 69708545,
+                APIPublicKey: 'MWqWD6MJD7EWOyPxiVJvhYtNJKHKIfNxtYRfhaPcZZhCmelw5u',
+                Environment: 'www',
+                ResponseLanguage: 'he_IL'
+            };
+            jQuery(function () { og_bind_form_events(); });
+        </script>
+        <script>
+            jQuery(function () {
+                OfficeGuy.Payments.InitEditors();
+            });
+        </script>
+        <fieldset id="wc-officeguy-cc-form" class="wc-credit-card-form wc-payment-form og-payment-form">
+            Show input boxes for new data -->
+            <!-- <div class="woocommerce-error og-errors" style="display: none;"></div> -->
+
+            <!-- Credit card number -->
+            <!-- <p class="form-row form-row-first woocommerce-validated">
+
+                <input type="text" class="input-text og-cc-cardnumber" id="og-ccnum" name="og-ccnum"
+                    data-og="cardnumber" maxlength="20" autocomplete="off" required="required"
+                    data-og-message="יש להזין מספר כרטיס אשראי.">
+                <label for="og-ccnum">
+                    <span class="required">*</span>מספר כרטיס אשראי
+                </label>
+
+            </p>
+            <p class="form-row form-row-last woocommerce-validated">
+
+                <input type="text" class="input-text og-cc-citizenid" id="og-citizenid" name="og-citizenid"
+                    maxlength="20" data-og="citizenid" autocomplete="off" required="required"
+                    data-og-message="יש להזין מספר תעודת זהות.">
+                <label for="og-citizenid" title="תעודת זהות / מס’ דרכון (לתיירים)">
+                    <span class="required">*</span>[?] תעודת זהות
+
+                </label>
+            </p>
+
+            <div class="og-clear"></div> -->
+
+            <!-- Credit card expiration -->
+            <!-- <p class="form-row form-row-first woocommerce-validated">
+
+                <span class="og-expiration">
+                    <select name="og-expmonth" id="og-expmonth" class="woocommerce-select og-cc-month"
+                        data-og="expirationmonth" required="required">
+                        <option value="">חודש</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select name="og-expyear" id="og-expyear" class="woocommerce-select og-cc-year"
+                        data-og="expirationyear" required="required" data-og-message="יש להזין את תוקף הכרטיס.">
+                        <option value="">שנה</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                    </select>
+                </span>
+                <label for="og-expmonth">
+                    <span class="required">*</span> תוקף הכרטיס
+                </label>
+            </p>
+
+            <p class="form-row form-row-last woocommerce-validated">
+
+
+                <input type="text" class="input-text og-cc-cvv" id="og-cvv" name="og-cvv" maxlength="4" data-og="cvv"
+                    autocomplete="off" required="required" data-og-message="‫יש להזין ספרות בגב הכרטיס (CVV).">
+                <label for="og-cvv" title="3/4 ספרות בגב כרטיס האשראי">
+                    <span class="required">*</span>(CVV) [?] ספרות בגב הכרטיס
+
+                </label>
+            </p>
+
+
+        </fieldset>
+
+    </div> -->
+
+
+
+
+
+
+<!-- 
+
+
+    <div class="section shipping-method" data-bind="visible: showShippingMethods" style="margin-left: 100px;" class="m">
+
+        <h3 class="section-title title">
+            <strong>משלוח</strong>
+        </h3>
+        <div class="section-body well">
+            <div class="panel-loader-effect shipping-methods-loader" data-bind="visible: shippingModel.loading"
+                style="display: none;">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+            <div>
+                <ul class="method-list" data-bind="foreach: shippingModel.shippingMethods">
+                    <li class="shipping-details">
+
+                        <input type="radio" name="shippingmethod"
+                            data-bind="value: name + '___' + shippingRateComputationMethodSystemName, checked: $root.shippingModel.selectedShippingMethod, attr: { id: 'shippingmethod_' + $index() }"
+                            value="שליח -  עד 7 ימי עסקים___Shipping.FixedOrByWeight" id="shippingmethod_0"><span
+                            class="validationMessage" style="display: none;"></span>
+                        <label data-bind="attr: { for: 'shippingmethod_' + $index() }" for="shippingmethod_0">
+                            <span data-bind="text: name">שליח - עד 7 ימי עסקים</span>
+                            <span data-bind="text:  ' (' + fee + ')', visible: fee"> (₪19.00)</span>
+                        </label>
+
+                        <div class="method-description"
+                            data-bind="visible: description != null &amp;&amp; description.length > 0"
+                            style="display: none;">
+                            <span data-bind="text: description"></span>
+                        </div>
+                    </li>
+
+                    <li class="shipping-details">
+
+                        <input type="radio" name="shippingmethod"
+                            data-bind="value: name + '___' + shippingRateComputationMethodSystemName, checked: $root.shippingModel.selectedShippingMethod, attr: { id: 'shippingmethod_' + $index() }"
+                            value="איסוף עצמי - מינימום 2 עד 7 ימי עסקים - יש ליצור קודם קשר עם הסניף !___PickUpInStore"
+                            id="shippingmethod_1"><span class="validationMessage" style="display: none;"></span>
+                        <label data-bind="attr: { for: 'shippingmethod_' + $index() }" for="shippingmethod_1">
+                            <span data-bind="text: name">איסוף עצמי - מינימום 2 עד 7 ימי עסקים - יש ליצור קודם קשר עם
+                                הסניף
+                                !</span>
+                            <span data-bind="text:  ' (' + fee + ')', visible: fee" style="display: none;"> ()</span>
+                        </label>
+
+                        <div class="method-description"
+                            data-bind="visible: description != null &amp;&amp; description.length > 0"
+                            style="display: none;">
+                            <span data-bind="text: description"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="message-error row" data-bind="visible: shippingModel.warnings().length > 0"
+                style="display: none;">
+                <ul data-bind="foreach: shippingModel.warnings"></ul>
+            </div>
+
+            <p class="validationMessage" data-bind="validationMessage: $root.shippingModel.selectedShippingMethod"
+                style="display: none;"></p>
+        </div>
+    </div> -->
+
+
+
+
+
+
+<!-- 
+
+
+    <div class="col-md-4 col-sm-4 col-xs-12" >
+        <div class="panel billing-address-panel" id="billing-address-panel">
+            <div class="section billing-address" data-bind="visible: disableBillingAddressCheckoutStep() === false">
+
+                <h3 class="section-title title" style="text-align: center;">
+                    <strong>כתובת למשלוח הפריטים</strong>
+                </h3>
+                <div class="section-body welldone">
+                    <div class="panel-loader-effect billing-address-loader" data-bind="visible: billingModel.loading"
+                        style="display: none;">
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                    </div>
+                    <div class="section select-billing-address">
+                        <select data-bind="options: availableAddresses,
+            optionsText: 'address1',
+            optionsValue: 'id',
+            value: billingModel.selectedAddressId,
+            optionsCaption: 'כתובת חדשה'" class="form-control" style="display:none;" required="required"
+                            aria-required="true">
+                            <option value="">כתובת חדשה</option>
+                        </select>
+                    </div>
+
+                    <div class="form-fields" data-bind="with: billingModel.address">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                            <input type="text" autocorrect="off" autocomplete="given-name" id="billingFirstName"
+                                placeholder="שם פרטי" name="billingFirstName" data-bind="value: firstName"
+                                class="form-control" required="required" aria-required="true" aria-label="שם פרטי"><span
+                                class="validationMessage" style="display: none;"></span>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                            <input type="text" autocorrect="off" autocomplete="family-name" id="billingLastName"
+                                placeholder="שם משפחה" name="billingLastName" data-bind="value: lastName"
+                                class="form-control" required="required" aria-required="true"
+                                aria-label="שם משפחה"><span class="validationMessage" style="display: none;"></span>
+                        </div>
+                        <div class="input-group" data-bind="visible: $parent.addressSettings.phoneEnabled">
+
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input type="tel" autocorrect="off" autocomplete="tel" id="billingPhoneNumber"
+                                placeholder="טלפון" name="billingPhoneNumber" data-bind="value: phoneNumber"
+                                class="form-control" required="required" aria-required="true" aria-label="טלפון"><span
+                                class="validationMessage" style="display: none;"></span>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+
+                            <input type="email" autocapitalize="off" autocorrect="off" autocomplete="email"
+                                id="billingEmail" name="billingEmail" placeholder="אימייל" data-bind="value: email"
+                                class="form-control" required="required" aria-required="true" aria-label="אימייל"><span
+                                class="validationMessage" style="display: none;"></span>
+                        </div>
+                        <div class="input-group" data-bind="visible: $parent.addressSettings.companyEnabled"
+                            style="display: none;">
+
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                            <input type="text" autocorrect="off" autocomplete="organization" id="billingCompany"
+                                placeholder="חברה" name="billingCompany" data-bind="value: company" class="form-control"
+                                aria-label="חברה"><span class="validationMessage" style="display: none;"></span>
+                        </div>
+                        <div class="input-group"
+                            data-bind="visible: $parent.addressSettings.countryEnabled() &amp;&amp; !countryHidden()"
+                            style="display: none;">
+
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                            <select id="billingCountry" name="billingCountry" data-bind="options: $parent.availableCountries,
+                optionsText: 'Name',
+                optionsValue: 'Id',
+                value: countryId,
+                optionsCaption: 'בחר ארץ'" class="form-control" required="required" aria-label="בחר ארץ">
+                                <option value="">בחר ארץ</option>
+                                <option value="45">Israel</option>
+                            </select><span class="validationMessage" style="display: none;"></span>
+                        </div>
+                        <div class="input-group"
+                            data-bind="visible: $parent.addressSettings.countryEnabled() &amp;&amp; $parent.addressSettings.stateProvinceEnabled() &amp;&amp;  !stateProvinceHidden()"
+                            style="display: none;">
+
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                            <select id="billingStateProvince" name="billingStateProvince" class="form-control"
+                                data-bind="value: stateProvinceId,
+            options: availableStateProvinces,
+            optionsValue: 'Id',
+            optionsText: 'Name'"></select><span class="validationMessage" style="display: none;"></span>
+                        </div>
+                        <div class="input-group" data-bind="visible: $parent.addressSettings.cityEnabled">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                            <input type="text" autocorrect="off" autocomplete="address-level2" id="billingCity"
+                                placeholder="עיר" name="billingCity" data-bind="value: city" class="form-control"
+                                aria-label="עיר"><span class="validationMessage" style="display: none;"></span>
+                        </div>
+
+
+                        <div class="form-group" data-bind="visible: $parent.addressSettings.streetAddressEnabled">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-screenshot"></i></span>
+                                <input type="text" autocorrect="off" autocomplete="street-address" id="billingAddress1"
+                                    placeholder="רחוב" name="billingAddress1" data-bind="value: address1"
+                                    class="form-control" required="required" aria-required="true" aria-label="רחוב"
+                                    style="border-radius:0px !important;"><span class="validationMessage"
+                                    style="display: none;"></span>
+                                <span data-bind="visible: $parent.addressSettings.streetNumberEnabled"
+                                    class="input-group-addon"
+                                    style="padding: 5px; border-radius: 0px !important; display: none;">מס' רחוב</span>
+                                <span data-bind="visible: $parent.addressSettings.streetNumberEnabled"
+                                    style="display: none;">
+                                    <input type="text" autocorrect="off" autocomplete="address-line2"
+                                        id="billingStreetNumber" placeholder="מס' רחוב" name="billingStreetNumber"
+                                        data-bind="value: streetNumber" class="form-control" aria-label="מס' רחוב"
+                                        style="width: 40px;border-radius:0px !important;"><span
+                                        class="validationMessage" style="display: none;"></span>
+                                </span>
+                                <span data-bind="visible: $parent.addressSettings.aptNumberEnabled"
+                                    class="input-group-addon"
+                                    style="padding: 5px; border-radius: 0px !important; display: none;">מס' דירה</span>
+                                <span data-bind="visible: $parent.addressSettings.aptNumberEnabled"
+                                    style="display: none;">
+                                    <input type="text" autocorrect="off" autocomplete="address-line3"
+                                        id="billingAptNumber" placeholder="מס' דירה" name="billingAptNumber"
+                                        data-bind="value: aptNumber" class="form-control" aria-label="מס' דירה"
+                                        style="width: 40px;border-radius: 10px 0px 0px 10px;"><span
+                                        class="validationMessage" style="display: none;"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="input-group" data-bind="visible: $parent.addressSettings.streetAddress2Enabled"
+                            style="display: none;">
+                            <input type="text" autocorrect="off" autocomplete="address-line1" id="billingAddress2"
+                                placeholder="כתובת 2" name="billingAddress2" data-bind="value: address2"
+                                class="form-control" aria-label="כתובת 2"><span class="validationMessage"
+                                style="display: none;"></span>
+                        </div>
+
+                        <div class="input-group" data-bind="visible: $parent.addressSettings.zipPostalCodeEnabled">
+
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-screenshot"></i></span>
+                            <input type="text" inputmode="numeric" pattern="[0-9]*" novalidate="" autocorrect="off"
+                                autocomplete="postal-code" id="billingZipPostalCode" placeholder="מיקוד"
+                                name="billingZipPostalCode" data-bind="value: zipPostalCode" class="form-control"
+                                required="required" aria-required="true" aria-label="מיקוד"><span
+                                class="validationMessage" style="display: none;"></span>
+                        </div>
+
+                        <div class="input-group" data-bind="visible: $parent.addressSettings.faxEnabled"
+                            style="display: none;">
+
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-save-file"></i></span>
+                            <input type="text" id="billingFaxNumber" placeholder="פקס" name="billingFaxNumber"
+                                data-bind="value: faxNumber" class="form-control" aria-label="פקס"><span
+                                class="validationMessage" style="display: none;"></span>
+                        </div> -->
+
+                        <!-- ko template: { name: displayMode, foreach: customAddressAttributes }-->
+                        <!-- /ko -->
+
+                        <!-- <div class="section ship-to-same-address"
+                            data-bind="visible: $parent.shippingSettings.shipToSameAddress() &amp;&amp; !$parent.shippingModel.pickUpInStore()">
+                            <input type="checkbox" id="shipToSameAddress" name="shipToSameAddress"
+                                data-bind="checked: $parent.shipToSameAddress" aria-label="השתמש באותה הכתובת למשלוח">
+                            <label for="shipToSameAddress">השתמש באותה הכתובת למשלוח</label>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- something important here -->
+<!--  -->
+        <!-- <script type="text/html" id="custom_attribute_template_1"> -->
+
+<!-- DropdownList -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <select data-bind="attr: { name: controlId, id:controlId}, value: value" class="form-control"> -->
+                <!-- ko if: !IsRequired() -->
+                <!-- <option value="0">---</option> -->
+                <!-- /ko -->
+                <!-- ko foreach: Values-->
+                <!-- <option data-bind="attr:{selected: IsPreSelected}, value: Id, text: Name"></option> -->
+                <!-- /ko -->
+            <!-- </select>
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_2"> -->
+
+<!-- RadioList -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <ul class="option-list" data-bind="foreach: Values">
+                <li class="radio">
+                    <input
+                        data-bind="attr:{id: $parent.controlId() + Id(), name:$parent.controlId()}, value: Id, checked: $parent.value"
+                        type="radio" />
+                    <label data-bind="attr:{for: $parent.controlId() + Id()}, text:Name"></label>
+                </li>
+
+            </ul>
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_3"> -->
+<!-- Checkboxes -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <ul class="option-list" data-bind="foreach: Values">
+                <li class="checkbox">
+                    <input
+                        data-bind="attr:{id: $parent.controlId() + Id(), name:$parent.controlId(), value: Id, checked: value}"
+                        type="checkbox" />
+                    <label data-bind="attr:{for: $parent.controlId() + Id()}, text:Name"></label>
+                </li>
+
+            </ul>
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_4"> -->
+<!-- TextBox -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <input data-bind="attr:{id: controlId, name: controlId}, value: value" type="text" class="form-control"
+                aria-label="נא רשמי כאן" />
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_10"> -->
+<!-- MultilineTextbox -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <textarea
+                data-bind="attr:{id: controlId, name: controlId, value: DefaultValue, text: DefaultValue, placeholder: DefaultValue}"
+                class="form-control" aria-label="נא רשמי כאן"></textarea>
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_20"> -->
+<!-- Datepicker -->
+        <!-- <div class="inputs custom-attributes">
+            <label data-bind="text:Name"></label>
+            <input />
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_4"> -->
+<!-- RadioList -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <input />
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_30"> -->
+<!-- FileUpload -->
+        <!-- <div class="inputs custom-attributes">
+            <label data-bind="text:Name"></label>
+            <input />
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_40"> -->
+<!-- ColorSquares -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <input />
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_45"> -->
+<!-- ImageSquares -->
+        <!-- <div class="inputs custom-attributes">
+            <label data-bind="text:Name"></label>
+            <input />
+        </div>
+        </script>
+        <script type="text/html" id="custom_attribute_template_50"> -->
+<!-- ReadonlyCheckboxes -->
+        <!-- <div class="inputs custom-attributes">
+            <label>
+                <span data-bind="text:Name"></span>
+                <span data-bind="visible: IsRequired" class="required">*</span>
+            </label>
+            <ul class="option-list" data-bind="foreach: Values">
+
+                <li class="checkbox">
+                    <input
+                        data-bind="attr:{id: $parent.controlId() + Id(), name:$parent.controlId(), value: Id, checked: IsPreSelected}"
+                        type="checkbox" disabled="disabled" />
+                    <label data-bind="attr:{for: $parent.controlId() + Id()}, text:Name"> -->
+
+                    <!-- </label>
+                </li>
+
+            </ul>
+        </div>
+        </script>
+
+        <div class="panel guest-login-panel">
+            <div class="section guest-login"
+                data-bind="visible: !guestLoginModel.isRegistered() &amp;&amp; !guestLoginModel.isImpersonation()"
+                style="display: none;">
+
+
+                <div class="section-body well">
+                    <div class="panel-loader-effect guest-login-loader" data-bind="visible: billingModel.loading"
+                        style="display: none;">
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-fields billing-address" data-bind="with: guestLoginModel">
+                        <div class="input-group">
+
+                            <input type="checkbox" id="wantToRegister" name="wantToRegister"
+                                data-bind="checked: wantToRegister" aria-label="צור חשבון לשימוש עתידי">
+                            <span for="wantToRegister"
+                                style="margin:6px;position: absolute;width:300px;font-weight:600;font-size: 1.1em;"> צור
+                                חשבון לשימוש עתידי</span>
+                        </div>
+                        <div data-bind="visible: wantToRegister" style="display: none;">
+                            <label for="username" style="margin-right: 33px;">שם המשתמש שלך הנה כתובת המייל שמילאת
+                                למעלה:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i
+                                        class="glyphicon glyphicon glyphicon-user"></i></span>
+
+                                <input type="text" id="username" placeholder="שם המשתמש שלך באתר" name="username"
+                                    data-bind="value: username" class="form-control" readonly="readonly"
+                                    aria-label="שם המשתמש שלך הנה כתובת המייל שמילאת למעלה">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i
+                                        class="glyphicon glyphicon glyphicon-eye-close"></i></span>
+
+                                <input type="password" id="password" placeholder="בחר סיסמא" name="password"
+                                    data-bind="value: password" class="form-control" required="required"
+                                    aria-required="true" aria-label="בחר סיסמא"><span class="validationMessage"
+                                    style="display: none;"></span>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i
+                                        class="glyphicon glyphicon glyphicon-eye-close"></i></span>
+
+                                <input type="password" id="password2" placeholder="הקלד שוב את הסיסמא" name="password2"
+                                    data-bind="value: password2" class="form-control" required="required"
+                                    aria-required="true" aria-label="הקלד שוב את הסיסמא"><span class="validationMessage"
+                                    style="display: none;"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel estimate-shipping-panel">
+            <div class="section estimate-shipping" data-bind="visible: estimateShippingModel.isVisible"
+                style="display: none;">
+                <div class="section-title title">
+                    <strong>הערכת עלות המשלוח</strong>
+                </div>
+                <div class="section-body well">
+                    <div class="hint">הזן/י יעד לקבלת הערכת עלות משלוח</div>
+                    <div class="shipping-options">
+                        <div class="inputs">
+                            <label for="estimateShippingCountry">
+                                ארץ: <span class="required">*</span>
+                            </label>
+                            <select id="estimateShippingCountry" name="estimateShippingCountry" data-bind="options: availableCountries,
+                optionsText: 'Name',
+                optionsValue: 'Id',
+                value: estimateShippingModel.selectedCountryId,
+                optionsCaption: 'בחר ארץ'" class="form-control">
+                                <option value="">בחר ארץ</option>
+                                <option value="45">Israel</option>
+                            </select>
+                        </div>
+                        <div class="inputs">
+                            <label for="estimateShippingStateProvince">
+                                מדינה / מחוז:
+                            </label>
+                            <select id="estimateShippingStateProvince" name="estimateShippingStateProvince"
+                                data-bind="value: estimateShippingModel.selectedStateId" class="form-control"></select>
+                        </div>
+                        <div class="inputs">
+                            <label for="estimateShippingZipPostalCode">
+                                מיקוד:
+                            </label>
+                            <input type="text" id="estimateShippingZipPostalCode" name="estimateShippingZipPostalCode"
+                                data-bind="value: estimateShippingModel.zipPostalCode" class="form-control">
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="btn btn-default estimate-shipping-button"
+                                data-bind="enable: estimateShippingModel.isButtonEnabled, click: estimateShippingModel.estimateShipping">
+                                שלח
+                            </button>
+                        </div>
+                    </div>
+                    <ul class="shipping-results"
+                        data-bind="foreach: estimateShippingModel.shippingOptions, visible: estimateShippingModel.shippingOptions().length > 0"
+                        style="display: none;"></ul>
+                    <div class="message-error" data-bind="visible: estimateShippingModel.warnings().length > 0"
+                        style="display: none;">
+                        <ul data-bind="foreach: estimateShippingModel.warnings"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel checkout-attributes-panel">
+            <div class="section checkout-attributes" data-bind="visible: checkoutAttributes.attributes().length > 0">
+
+                <h3 class="section-title title">
+                    <strong>הערות עבור המשלוח</strong>
+                </h3>
+                <div class="section-body well">
+                    <div class="panel-loader-effect checkout-attributes-loader"
+                        data-bind="visible: checkoutAttributes.loading" style="display: none;">
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-fields" data-bind="with: checkoutAttributes">
+                        ko template: { name: displayMode, foreach: attributes }-->
+                        <!-- MultilineTextbox -->
+                        <!-- <div class="inputs custom-attributes">
+                            <label>
+                                <span data-bind="text:Name">הערות עבור המשלוח</span>
+                                <span data-bind="visible: IsRequired" class="required" style="display: none;">*</span>
+                            </label>
+                            <textarea
+                                data-bind="attr:{id: controlId, name: controlId, value: DefaultValue, text: DefaultValue, placeholder: DefaultValue}"
+                                class="form-control" aria-label="נא רשמי כאן" id="checkout_attribute_1"
+                                name="checkout_attribute_1" value="נא לרשום כאן" text="נא לרשום כאן"
+                                placeholder="נא לרשום כאן"></textarea> -->
+                        <!-- </div> -->
+                        <!-- /ko -->
+                    <!-- </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="hidden-xs col-sm-12">
+
+            <div class="panel complete-order-panel row">
+
+                <div class="order-confirm" data-bind="visible: orderConfirmModel.warnings().length > 0"
+                    style="display: none;">
+
+                    <ul class="error-list" data-bind="foreach: orderConfirmModel.warnings"></ul>
+                </div>
+
+
+
+                <div class="col-sm-12">
+                    <div class="ordersubscriptions">
+
+
+
+                        <div class="subscribeToNewsletter" data-bind="visible: memberClubModel.display"
+                            style="display: none;">
+                            <label for="memberclub_subscribe" data-bind="validationOptions: {insertMessages: false}"
+                                aria-label="כן, רשמו אותי למועדון הלקוחות">
+                                <input title="Subscribe to member club" type="checkbox" id="memberclub_subscribe1"
+                                    name="memberclub_subscribe" data-bind="checked: memberClubModel.wantToSubscribe"
+                                    aria-label="Yes, Please Sign me in">
+                                <span>כן, רשמו אותי למועדון הלקוחות</span>
+                            </label>
+
+
+                        </div> -->
+
+
+                        <!-- <div class="subscribeToNewsletter"
+                            data-bind="visible: orderConfirmModel.subscribeToNewsletterOnOrderConfirmPage"
+                            aria-label="רשמו אותי לקבלת מידע על מבצעים במייל וסמס">
+
+                            <label for="subscribeToNewsletter" data-bind="validationOptions: {insertMessages: false}">
+                                <input title="subscribeToNewsletter" type="checkbox" id="subscribeToNewsletter"
+                                    name="subscribeToNewsletter"
+                                    data-bind="checked: orderConfirmModel.subscribeToNewsletter"
+                                    aria-label="רשמו אותי לקבלת מידע על מבצעים במייל וסמס">
+                                <span>רשמו אותי לקבלת מידע על מבצעים במייל וסמס</span>
+                            </label>
+
+                            <p class="validationMessage"
+                                data-bind="validationMessage: orderConfirmModel.subscribeToNewsletter, text: 'רשמו אותי לקבלת מידע על מבצעים במייל וסמס'"
+                                style="display: none;">רשמו אותי לקבלת מידע על מבצעים במייל וסמס</p>
+
+                        </div>
+                        <div class="terms-of-service"
+                            data-bind="visible: orderConfirmModel.termsOfServiceOnOrderConfirmPage">
+
+                            <label for="terms-of-service" data-bind="validationOptions: {insertMessages: false}"
+                                aria-label="יש לאשר את התנאים">
+                                <input title="terms-of-service" type="checkbox" id="terms-of-service"
+                                    name="termsOfService" data-bind="checked: orderConfirmModel.termsOfService"
+                                    required="required" aria-required="true" aria-label="יש לאשר את התנאים">
+                                <span>יש לאשר את התנאים</span>
+                                <a class="read" id="read-terms">(קרא/י)</a>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#read-terms').on('click', function (e) {
+                                            e.preventDefault();
+                                            displayPopupContentFromUrl('/t-popup/conditionsofuse', 'תנאי השירות');
+                                        });
+                                    });
+                                </script>
+                            </label>
+
+                            <p class="validationMessage"
+                                data-bind="validationMessage: orderConfirmModel.termsOfService, text: 'יש לאשר את התנאים'"
+                                style="display: none;">יש לאשר את התנאים</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div style="text-align: center !important;margin: 0 auto !important;">
+                        <div class="buttons complete-button text-center">
+                            <button id="Pay-For-Order" type="button" 
+                                data-bind="click: orderConfirmModel.complete, visible: orderConfirmModel.enable"
+                                class="btn btn-primary btn-lg" aria-label="לביצוע תשלום">
+                                <span >לביצוע תשלום</span>
+                            </button>
+                        </div>
+
+                        <div class="addon-buttons"></div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                input[type=checkbox] {
+                    -webkit-appearance: none;
+                    background-color: #fff;
+                    border: 1px solid #001f35;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+                    padding: 9px;
+                    border-radius: 3px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: relative;
+                    bottom: 3px;
+                }
+
+
+                input[type=checkbox]:active,
+                input[type=checkbox]:checked:active {
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+                }
+
+                input[type=checkbox]:checked {
+                    background-color: #fff;
+                    border: 1px solid #001f35;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+                    color: #001f35;
+                }
+
+
+                input[type=checkbox]:checked:after {
+                    content: '\2714';
+                    font-size: 14px;
+                    position: absolute;
+                    top: 0px;
+                    left: 3px;
+                    color: #001f35;
+                }
+            </style>
+        </div>
+
+    </div>
+
+
+
+</div> -->
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action="/action_page.php">
+  
+          <div class="row">
+            <div class="col-50">
+              <h3>פרטים</h3>
+              <label for="fname"><i class="fa fa-user"></i> שם מלא</label>
+              <input type="text" id="fname" name="firstname" placeholder="דוד כהן">
+              <label for="email"><i class="fa fa-envelope"></i> אימייל</label>
+              <input type="text" id="email" name="email" placeholder="john@example.com">
+              <label for="adr"><i class="fa fa-address-card-o"></i> כתובת</label>
+              <input type="text" id="adr" name="address" placeholder="מנחם בגין">
+              <label for="city"><i class="fa fa-institution"></i> עיר</label>
+              <input type="text" id="city" name="city" placeholder="בני ברק">
+  
+              <div class="row">
+                <div class="col-50">
+                  <label for="state">מספר בית</label>
+                  <input type="text" id="state" name="state" placeholder="30">
+                </div>
+                <div class="col-50">
+                  <label for="zip">מיקוד</label>
+                  <input type="text" id="zip" name="zip" placeholder="10001">
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-50">
+              <h3>תשלום</h3>
+              <label for="fname">פרטי כרטיס</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">שם בעל הכרטיס</label>
+              <input type="text" id="cname" name="cardname" placeholder="דוד כהן">
+              <label for="ccnum">מספר כרטיס</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">חודש</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="4">
+  
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">שנה</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="352">
+                </div>
+              </div>
+            </div>
+  
+          </div>
+
+
+
+
+
+          
+          <!-- <label>
+            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+          </label> -->
+          <input type="submit" value="לתשלום" class="btn">
+        </form>
+      </div>
+    </div>
+  
+    <!-- <div class="col-25">
+      <div class="container">
+        <h4>Cart
+          <span class="price" style="color:black">
+            <i class="fa fa-shopping-cart"></i>
+            <b>4</b>
+          </span>
+        </h4>
+        <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+        <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+        <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+        <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>$30</b></span></p> -->
+      </div>
+    <!-- </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

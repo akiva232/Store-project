@@ -1,0 +1,32 @@
+<div style="text-align: center;">
+<ul  style="list-style: none; 
+padding: 0; 
+margin: auto;
+width: 90%;
+padding: 10px;">
+
+    <li *ngFor="let i of getGallery()">
+      <a href="/חולצות" class="card-link" >
+             <mat-card class="example-card" style="background: white;">  
+            <mat-card-header  style="color: black;"> 
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title >{{i.name}}</mat-card-title>
+              <!-- <mat-card-subtitle >Dog Breed</mat-card-subtitle> -->
+            </mat-card-header>
+            <img style="max-height: 100px; max-width: 100px;margin-left: 50px; " mat-card-image src={{i.img}} alt="Photo of a Shiba Inu">
+            <mat-card-content style="color: black;">
+              <p>
+                          {{i.topic}}              
+         </p>
+            </mat-card-content>
+            <!-- <mat-card-actions>
+              <button mat-button style="color: black;">{{i.buttun}}</button>
+               <button mat-button style="color: black;">SHARE</button> -->
+            <!-- </mat-card-actions> -->
+          </mat-card>  
+           <br><br>
+          </a>
+    </li>
+</ul>
+</div>
+<router-outlet></router-outlet>

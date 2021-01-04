@@ -1,0 +1,87 @@
+
+
+
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+            <div *ngIf="data" >
+                <img src={{data.url}}  class="img-fluid" >
+            </div>
+
+          <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt=""> -->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+           <div style="margin-top: 200px;">
+
+            <p class="lead font-weight-bold">{{data.name}}</p>
+
+            <p>{{data.more}}</p>
+
+            <!-- <br> -->
+            <div class="col-md-6">
+                <label>:בחר מידה</label> <br>
+               
+                <select [(ngModel)]="sizeI" class="md-form mdb-select colorful-select dropdown-primary"   >
+                    
+                  <!-- <option value="" disabled selected>--</option> -->
+                  <option *ngFor="let i of dataS.size">{{i}}</option>
+                  
+                </select>
+               
+                <!-- <select #size class="md-form mdb-select colorful-select dropdown-primary"  > -->
+                    
+                  
+                    <!-- <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                  </select> -->
+              </div>
+              <br>
+
+            <p class="lead">
+                <span class="mr-1">
+                  <!-- <del>{{mn.price |currency:"₪"}}</del> -->
+                </span>
+                <span>{{dataS.products.price |currency:"₪"}}</span>
+              </p>
+
+            <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <!-- <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px"> -->
+              <button class="btn btn-primary btn-md my-0 p" type="submit" (click)="add(data)" style="height: 40px;text-align: center;">הוסף לסל
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form>
+        
+          </div>
+          <!--Content-->
+       
+        </div>
+        <!--Grid column-->
+    </div>
+      </div>
+
+

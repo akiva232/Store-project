@@ -1,0 +1,54 @@
+
+<button routerLink="/add items">הכנס פריט חדש</button>
+
+
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">רשימת פריטים </h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+              class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead>
+            <tr>
+              <th class="text-center">מחיקה</th>
+              <th class="text-center">עריכה</th>
+              <th class="text-center">הנחה</th>
+              <th class="text-center">מחיר</th>
+              <th class="text-center">תמונה</th>
+              <th class="text-center">פירוט</th>
+              <th class="text-center">חברה </th>
+              <th class="text-center"> סוג</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let i of shirtS.products '>
+                <td>
+                    <span class="table-remove"><button type="button"
+                        class="btn btn-danger btn-rounded btn-sm my-0" (click)="delete(i.id)">מחיקה</button></span>
+                  </td>
+
+                  <td class="pt-3-half">
+                <span class="table-up"><a  class="indigo-text" (click)="updet(i.id)" >עריכה<i class="fas fa-long-arrow-alt-up"
+                    aria-hidden="true"></i></a></span>
+              <span class="table-down"><a href="#!" class="indigo-text" ><i class="fas fa-long-arrow-alt-down"
+                    aria-hidden="true"></i></a></span>
+               </td>
+               <td  class="pt-3-half" contenteditable="true">{{i.sale}}</td>
+              <td  class="pt-3-half" contenteditable="true">{{i.price}}</td>
+              <td  class="pt-3-half" contenteditable="true">{{i.url}}</td>
+              <td  class="pt-3-half" contenteditable="true">{{i.more}}</td>
+              <td  class="pt-3-half" contenteditable="true">{{i.name}}</td>
+              <td  class="pt-3-half" contenteditable="true">{{i.type}}</td>
+              <td class="pt-3-half" contenteditable="true">{{i.id}}</td>
+              
+            </tr>
+            
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<router-outlet></router-outlet>

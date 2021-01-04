@@ -1,0 +1,78 @@
+<router-outlet></router-outlet>
+
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>New snippet 517</title>
+    <style>
+        body {
+            margin: 25px;
+			padding: 10px;
+			
+        }
+    </style>
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css"><style></style><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+<body aria-busy="true">
+
+
+<!-- Material form login -->
+<div class="card"  >
+
+  <h5 class="card-header info-color white-text text-center py-4">
+    <strong>הוסף פריט חדש</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;" action="#!" [formGroup]="items">
+
+
+        <div class="md-form">
+            <input  #type  matInpu placeholder="סוג"  type="text"  class="form-control" formControlName="items" required>
+            <!-- <label for="materialLoginFormPassword">Password</label> -->
+          </div>
+      <!-- Email -->
+      <div class="md-form">
+		
+        <input #name  matInpu placeholder="חברה"  type="text"  class="form-control" formControlName="name" required>
+		<!-- <label for="materialLoginFormEmail">E-mail</label> -->
+		
+      </div>
+
+      <!-- Password -->
+      <div class="md-form">
+        <input  #more  matInpu placeholder="פירוט"  type="text"  class="form-control" formControlName="more" required>
+        <!-- <label for="materialLoginFormPassword">Password</label> -->
+      </div>
+
+      <div class="md-form">
+        <input  #size  matInpu placeholder="מידה"  type="text"  class="form-control" formControlName="size" required>
+        <!-- <label for="materialLoginFormPassword">Password</label> -->
+      </div>
+
+      <div class="md-form">
+        <input  #url  matInpu placeholder="תמונה"  type="text"  class="form-control" formControlName="url" required>
+        <!-- <label for="materialLoginFormPassword">Password</label> -->
+      </div>
+
+      <div class="md-form">
+        <input  #price  matInpu placeholder="מחיר"  type="text"  class="form-control" formControlName="price" required>
+        <!-- <label for="materialLoginFormPassword">Password</label> -->
+      </div>
+
+      <div class="md-form">
+        <input  #sale  matInpu placeholder="מבצע"  type="text"  class="form-control" formControlName="sale" required>
+        <!-- <label for="materialLoginFormPassword">Password</label> -->
+      </div>
+
+
+      <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click)="add(type.value,name.value,more.value,size.value,url.value,price.value,sale.value)" >הוסף פריט</button>
+      
+    </form>
+    
+
+  </div>
+
+</div>

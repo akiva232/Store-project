@@ -1,0 +1,90 @@
+
+
+<router-outlet></router-outlet>
+
+<!-- <button (click)="arr()">grdgdfbfd</button> -->
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>New snippet 603</title>
+  <style>
+      body {
+        margin: 25px;
+			padding: 10px;
+      }
+  </style>
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css"><style></style><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+<body aria-busy="true">
+
+
+<!-- Material form register -->
+<div class="card">
+
+  <h5 class="card-header info-color white-text text-center py-4">
+      <strong>עריכה</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+      <!-- <div *ngFor="let i of log.dataId">  -->
+      <form class="text-center" style="color: #757575;" action="#!" [formGroup]="formdata">
+
+        
+
+          <div class="form-row">
+              <div class="col">
+                  <!-- First name -->
+                  <div class="md-form">
+                      <input #lastName matInput placeholder="שם משפחה" formControlName="lastName" type="text" required autofocus id="materialRegisterFormLastName" class="form-control"  required autofocus>
+                      <!-- <label for="materialRegisterFormFirstName"></label> -->
+                  </div>
+              </div>
+              <div class="col">
+                  <!-- Last name -->
+                  <div class="md-form">
+                      <input      #name matInput placeholder="שם פרטי" formControlName="name"  type="text" id="materialRegisterFormFirstName" class="form-control" required autofocus>  
+                      <!-- <label for="materialRegisterFormLastName">Last name</label> -->
+                  </div>
+              </div>
+          </div>
+
+          <!-- E-mail -->
+          <div class="md-form mt-0">
+              <input  #email matInput placeholder="אימייל" formControlName="email"   type="email" id="materialRegisterFormEmail" class="form-control" required autofocus>
+              <!-- <label for="materialRegisterFormEmail">E-mail</label> -->
+          </div>
+
+          <!-- Password -->
+          <div class="md-form">
+              <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"   #password  matInput  placeholder="סיסמא" formControlName="password" required autofocus>
+              <!-- <label for="materialRegisterFormPassword">Password</label> -->
+              <!-- <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  At least 8 characters and 1 digit -->
+              <!-- </small> -->
+          </div>
+
+          <!-- Phone number -->
+          <div class="md-form">
+              <input type="tel" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" #tel matInput placeholder="טלפון" formControlName="tel"  required autofocus>
+              <!-- <label for="materialRegisterFormPhone">Phone number</label> -->
+              <!-- <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                  
+                  Optional - for two step authentication
+              </small> -->
+
+              <!-- <input  #id matInput placeholder="id" formControlName="id"   type="" id="materialRegisterFormEmail" class="form-control" required autofocus> -->
+
+          </div>
+
+        
+          <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click)="save(name.value,lastName.value,password.value,tel.value,email.value)" >שמור</button>
+
+    
+    </form>
+</div>
+</div>
+      <!-- Form -->
+
+  <!-- </div> -->
+
